@@ -1,5 +1,6 @@
 package com.example.umc_week5_2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,10 +13,22 @@ class MainActivity : AppCompatActivity() {
         viewBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
-        val dataList: ArrayList<Data> = arrayListOf()
+        //데이터 넣기
+        viewBinding.btnAdd.setOnClickListener {
+            var intent = Intent(this, MemoActivity::class.java)
+            startActivity(intent)
+        }
+        val extras = intent.extras
+        //val data = extras!!["title"] as String
+        val data = intent.getStringExtra("title").toString()
 
+        //val data2 = extras!!["content"] as String
+        //viewBinding.rvData.text = data
+
+
+        val dataList: ArrayList<Data> = arrayListOf()
         dataList.apply{
-            add(Data("title1", "content1"))
+            add(Data("$data", "content1"))
             add(Data("title2", "content1"))
             add(Data("title3", "content1"))
             add(Data("title4", "content1"))
