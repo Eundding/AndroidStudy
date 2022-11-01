@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.umc_week5_2.databinding.ActivityMainBinding
+import java.util.logging.Handler
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityMainBinding
@@ -18,28 +19,34 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, MemoActivity::class.java)
             startActivity(intent)
         }
+
+
         val extras = intent.extras
         //val data = extras!!["title"] as String
         val data = intent.getStringExtra("title").toString()
-
-        //val data2 = extras!!["content"] as String
-        //viewBinding.rvData.text = data
-
+        val data2 = intent.getStringExtra("content").toString()
 
         val dataList: ArrayList<Data> = arrayListOf()
         dataList.apply{
-            add(Data("$data", "content1"))
-            add(Data("title2", "content1"))
-            add(Data("title3", "content1"))
-            add(Data("title4", "content1"))
-            add(Data("title5", "content1"))
-            add(Data("title6", "content1"))
-
+            add(Data("title1", "content1"))
+            add(Data("title2", "content2"))
+            add(Data("title3", "content3"))
+            add(Data("title4", "content4"))
+            add(Data("title5", "content5"))
         }
+
+
 
         val dataRVAdapter = DataRVAdapter(dataList)
 
         viewBinding.rvData.adapter = dataRVAdapter
         viewBinding.rvData.layoutManager = LinearLayoutManager(this) //까먹으면 안됨
+
+        android.os.Handler(mainLooper).postDelayed({
+            dataList.apply{
+                add(Data("$data", "$data2"))
+            }
+            dataRVAdapter.notifyItemRangeInserted(5, 1)
+        }, 1000)
     }
 }

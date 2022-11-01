@@ -17,7 +17,7 @@ class MemoActivity : AppCompatActivity() {
         viewBinding.btnSave.setOnClickListener {
             var intent = Intent(this, MainActivity::class.java)
             intent.putExtra("title", viewBinding.etTitle.text.toString())
-            intent.putExtra("content", viewBinding.etContent.toString())
+            intent.putExtra("content", viewBinding.etContent.text.toString())
             startActivity(intent)
         }
 
