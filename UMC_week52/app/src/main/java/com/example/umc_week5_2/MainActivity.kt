@@ -33,6 +33,9 @@ class MainActivity : AppCompatActivity() {
             add(Data("title3", "content3"))
             add(Data("title4", "content4"))
             add(Data("title5", "content5"))
+            add(Data("title6", "content6"))
+            add(Data("title7", "content7"))
+            add(Data("title8", "content8"))
         }
 
 
@@ -46,7 +49,9 @@ class MainActivity : AppCompatActivity() {
             dataList.apply{
                 add(Data("$data", "$data2"))
             }
-            dataRVAdapter.notifyItemRangeInserted(5, 1)
+            dataRVAdapter.notifyItemRangeInserted(8, 1)
         }, 1000)
+
+
     }
 }
