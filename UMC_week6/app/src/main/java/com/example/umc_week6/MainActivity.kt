@@ -3,6 +3,8 @@ package com.example.umc_week6
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.umc_week6.databinding.ActivityMainBinding
+import com.example.umc_week6.databinding.FragmentHomeBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
     private val viewBinding: ActivityMainBinding by lazy {
@@ -13,7 +15,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
 
-        //어떤 화면을 기본으로 할지
+
+
+            //어떤 화면을 기본으로 할지
         supportFragmentManager
             .beginTransaction()
             .replace(viewBinding.containerFragment.id, HomeFragment())
@@ -47,6 +51,8 @@ class MainActivity : AppCompatActivity() {
             }
             selectedItemId = R.id.menu_home
         }
+
+
 
 
     }
