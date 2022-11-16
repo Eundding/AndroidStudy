@@ -90,9 +90,11 @@ class MainActivity : AppCompatActivity() {
                     val second = String.format("%02d", total % 60)
                     viewBinding.tvTime.text = "$minute:$second"
                     if (minute == "00") {
+                        if (second == "01"){
+                            status = false
+                        }
                         if (second == "00") {
                             soundPool.play(soundId, 1.0f, 1.0f, 0, 0, 1.0f,)
-                            status = false
                         }
                     }
 
