@@ -12,12 +12,20 @@ class MemoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         viewBinding = ActivityMemoBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
+        val extras = intent.extras
+        var idx = -1 // position 값 초기화
+        var key = -1 // key값 초기화
+        var star = extras!!["star"] as Boolean
 
         viewBinding.btnSave.setOnClickListener {
-            var intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("title", viewBinding.etTitle.text.toString())
-            intent.putExtra("content", viewBinding.etContent.text.toString())
-            setResult(RESULT_OK, intent)
+            var intent = Intent(this, MainActivity::class.java).apply {
+                putExtra("title", viewBinding.etTitle.text.toString())
+                putExtra("content", viewBinding.etContent.text.toString())
+                putExtra("idx", idx)
+                putExtra("key", key)
+                putExtra("star", star) //즐겨찾기 여부
+            }
+                setResult(RESULT_OK, intent)
             if (!isFinishing) finish()
         }
     }

@@ -1,20 +1,35 @@
 package com.example.umc_week8
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.umc_week8.databinding.ItemDataBinding
 
 class DataRVAdapter(private val dataList: ArrayList<Data>): RecyclerView.Adapter<DataRVAdapter.DataViewHolder>() {
-        inner class DataViewHolder(private val viewBinding: ItemDataBinding): RecyclerView.ViewHolder(viewBinding.root){
-            fun bind(data: Data){
-                viewBinding.apply {
-                    viewBinding.tvTitle.text = data.title
-                    viewBinding.tvContent.text = data.content
+    
+    inner class DataViewHolder(private val viewBinding: ItemDataBinding): RecyclerView.ViewHolder(viewBinding.root){
+        fun bind(data: Data){
+            viewBinding.apply {
+                viewBinding.tvTitle.text = data.title
+                viewBinding.tvContent.text = data.content
+            }
+        }
+        var temp = 0
+        init{
+            viewBinding.ibBorder.setOnClickListener{
+                if (temp % 2 == 0){
+                    viewBinding.ibBorder.setImageResource(R.drawable.ic_baseline_star_24)
+                    temp++
+                }
+                else{
+                    viewBinding.ibBorder.setImageResource(R.drawable.ic_baseline_star_border_24)
+                    temp++
                 }
             }
         }
-
+    }
+    
     //viewHolder 만들어질 때 실행할 동작
     override fun onCreateViewHolder(parent:ViewGroup, viewType: Int): DataViewHolder{
         val viewBinding = ItemDataBinding.inflate(LayoutInflater.from(parent.context), parent, false)
