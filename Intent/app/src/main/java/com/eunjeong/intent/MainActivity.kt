@@ -1,6 +1,7 @@
 package com.eunjeong.intent
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.eunjeong.intent.databinding.ActivityMainBinding
@@ -13,6 +14,45 @@ class MainActivity : AppCompatActivity() {
         viewBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
+        // DIAL 액션 예제
+        viewBinding.dialBtn.setOnClickListener {
+            //phoneNumEdt에 입력한 전화번호를 받아서 => 해당 번호에 전화연결
+            val inputPhoneNum = viewBinding.phoneNumEdt.text.toString()
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+            val myIntent = Intent(Intent.ACTION_DIAL, myUri)
+            startActivity(myIntent)
+        }
+        // Call 액션 예제
+        viewBinding.callBtn.setOnClickListener {
+            //phoneNumEdt에 입력한 전화번호를 받아서 => 해당 번호에 전화연결
+            val inputPhoneNum = viewBinding.phoneNumEdt.text.toString()
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+            val myIntent = Intent(Intent.ACTION_CALL, myUri)
+            startActivity(myIntent)
+        }
+        // 문자 전송 예제
+        viewBinding.smsBtn.setOnClickListener {
+            val inputPhoneNum = viewBinding.phoneNumEdt.text.toString()
+            val myUri = Uri.parse("smsto:${inputPhoneNum}")
+            val myIntent = Intent(Intent.ACTION_SENDTO, myUri)
+            myIntent.putExtra("sms_body", "미리 내용 입력")
+            startActivity(myIntent)
+        }
+        // Web
+        viewBinding.webBtn.setOnClickListener {
+            val myUri = Uri.parse("https://naver.com")
+            var myIntent = Intent(Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
+        }
+        
+        //kakao
+        viewBinding.kakaoStoreBtn.setOnClickListener {
+            val myUri = Uri.parse("market://details?id=com.kakao.talk") // market 뒷부분은 찾아야함
+            var myIntent = Intent(Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
+        }
+
+        //-----------------------------------------------------
         // 화면 간 이동 (OtherActivity)
         viewBinding.moveToOtherBtn.setOnClickListener {
             //다른 화면으로 이동

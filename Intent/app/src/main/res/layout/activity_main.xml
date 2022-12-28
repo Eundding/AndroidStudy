@@ -54,9 +54,52 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="닉네임 변경"/>
-
-
     </LinearLayout>
+
+    <!--New New-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="연결할 전화번호"/>
+
+    <EditText
+        android:id="@+id/phoneNumEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="전화번호 입력"
+        android:inputType="phone"/>
+
+    <Button
+        android:id="@+id/dialBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="전화 연결 (DIAL)"/>
+
+    <Button
+        android:id="@+id/callBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="전화 연결 (CALL)"/>
+
+    <Button
+        android:id="@+id/smsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="문자 전송 화면으로 이동"/>
+
+    <Button
+        android:id="@+id/webBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="네이버 웹 화면으로 이동"/>
+
+    <Button
+        android:id="@+id/kakaoStoreBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="카카오톡 앱 다운 화면으로 이동"/>
+
+
 
 
 </LinearLayout>
