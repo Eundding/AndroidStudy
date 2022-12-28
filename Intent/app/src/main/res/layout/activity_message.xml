@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MessageActivity">
+
+    <TextView
+        android:id="@+id/recievedMessageTv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="메세지 띄우겠습니다."
+        android:gravity="center"
+        android:textSize="20sp"/>
+
+</LinearLayout>
