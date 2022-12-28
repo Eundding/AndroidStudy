@@ -17,7 +17,7 @@ class OtherActivity : AppCompatActivity() {
 //            val myIntent = Intent(this, MainActivity::class.java)
 //            startActivity(myIntent)
             finish() // 지금 화면 꺼주세요
-            //넘어갈때는 intent 되돌아갈때는 finish 활용
+            // 넘어갈때는 intent 되돌아갈때는 finish 활용
         }
     }
 }
