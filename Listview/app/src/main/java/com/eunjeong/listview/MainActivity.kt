@@ -30,5 +30,6 @@ class MainActivity : AppCompatActivity() {
         mAdapter = StudentAdapter(this, R.layout.student_list_item, mStudentList)
 
         viewBinding.studentListView.adapter = mAdapter
+
     }
 }
