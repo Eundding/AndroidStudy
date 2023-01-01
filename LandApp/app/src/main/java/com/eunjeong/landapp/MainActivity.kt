@@ -1,5 +1,6 @@
 package com.eunjeong.landapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.eunjeong.landapp.adapters.RoomAdapter
@@ -28,6 +29,14 @@ class MainActivity : AppCompatActivity() {
         mAdapter = RoomAdapter(this, R.layout.room_list_item, mRoomList)
         viewBinding.roomListView.adapter = mAdapter
 
+        viewBinding.roomListView.setOnItemClickListener { parent, view, position, id ->
+            val clickedRoom = mRoomList[position]
+            val myIntent = Intent(this, ViewRoomDetailActivity::class.java)
+            // 데이터를 한 번에 통째로 보낼 때 시리얼라이즈블
+            myIntent.putExtra("room", clickedRoom)
+
+            startActivity(myIntent)
+        }
 
     }
 }
