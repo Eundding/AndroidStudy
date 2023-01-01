@@ -24,14 +24,13 @@ class RoomAdapter(
 
         val roomData = mList[position]
         val priceTxt = row.findViewById<TextView>(R.id.priceTextView)
-        val addressTxt = row.findViewById<TextView>(R.id.addressTextView)
-
+        val addressAndFloorTxt = row.findViewById<TextView>(R.id.addressAndFloorTextView)
         val descriptionTxt = row.findViewById<TextView>(R.id.descriptionTextView)
 
-//        val price: Int,
-//        val address: String,
-//        val floor: Int,
-//        val description: String
+        descriptionTxt.text = roomData.description
+        addressAndFloorTxt.text = roomData.address
+
+
         return row
     }
 
