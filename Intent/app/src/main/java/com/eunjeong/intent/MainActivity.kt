@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             var myIntent = Intent(Intent.ACTION_VIEW, myUri)
             startActivity(myIntent)
         }
-        
+
         //kakao
         viewBinding.kakaoStoreBtn.setOnClickListener {
             val myUri = Uri.parse("market://details?id=com.kakao.talk") // market 뒷부분은 찾아야함
