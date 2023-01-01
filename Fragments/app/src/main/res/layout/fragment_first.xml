@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#29914C"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/contentTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="첫 번째 프래그먼트입니다."
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/changeTextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="위 문구 변경"/>
+
+</LinearLayout>
