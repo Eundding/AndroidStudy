@@ -8,6 +8,19 @@ import com.eunjeong.viewpager.fragments.SecondFragment
 import com.eunjeong.viewpager.fragments.ThirdFragment
 
 class MainViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+    //페이지별 제목 설정
+    override fun getPageTitle(position: Int): CharSequence? {
+        if (position == 0){
+            return "첫번째"
+        }
+        else if (position == 1){
+            return "두번쨰"
+        }
+        else{
+            return "세번째"
+        }
+    }
+
     override fun getCount(): Int {
         return 3 // 몇장짜리인지
     }
