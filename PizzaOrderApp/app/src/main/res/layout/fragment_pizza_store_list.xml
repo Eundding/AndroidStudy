@@ -6,7 +6,7 @@
     android:gravity="center">
 
     <ListView
-        android:id="@+id/pizzaStoreListListView"
+        android:id="@+id/pizzaStoreListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
